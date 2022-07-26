@@ -47,6 +47,17 @@
   width: 100vw;
 }
 
+.container2 {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  color: #262936;
+}
+
+
 .page {
   width: inherit;
   border-radius: 20px;
@@ -96,6 +107,13 @@
   justify-content: space-between;
 }
 
+@media (max-width:768px) {
+  .header{
+    display: none;
+}
+}
+
+
 .headerbelow {
   background-color: #262936;
   position: fixed;
@@ -142,6 +160,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  padding:  7px;
   
 }
 
@@ -299,8 +318,8 @@
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
   transition-duration: 200ms;
-  height: 3rem;
-  min-width: 3rem;
+  height: 2.5rem;
+  min-width: 2rem;
   font-size: 1rem;
   background: rgb(238,174,202);
   /* background-image: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
@@ -329,8 +348,8 @@
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
   transition-duration: 200ms;
-  height: 3rem;
-  min-width: 3rem;
+  height: 2rem;
+  min-width: 2rem;
   font-size: 1rem;
   background: rgb(238,174,202);
   /* background-image: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
@@ -338,9 +357,19 @@
 
   /* background-image: linear-gradient(to left, #cc25b3 0%, #418dff 101.52%); */
   color: #fff;
-  width: 180px;
+  width: 150px;
   text-align: center;
   border-radius: 9999px;
+}
+
+@media (max-width:1000px) {
+  .stakeButton{
+    width: 80px;
+    font-weight: 200;
+    height: 1.2rem;
+    min-width: 1rem;
+    font-size: 0.5rem;
+}
 }
 .mainButton:hover {
   opacity: 0.8;
@@ -590,21 +619,34 @@
   width: 40%;
 
 }
+@media (max-width:1000px) {
+  .nftMedia{
+    width: 35%;
+}
+}
+
 
 .nftBoxGrid
 {
  
   display: flex;
   flex-direction: row;
+}
+
+
+@media (max-width: 768px) {
+  .nftBoxGrid{
+  flex-direction: column;
 
 }
-.nav{
+}
+/* .nav{
   display: flex;
   padding: 16px;
   justify-content: space-between;
   align-items: center;
   background-color: #f1f1f1;
-}
+} */
 .nav__menu-bar{
   display: flex;
   flex-direction: column;
@@ -649,10 +691,11 @@
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
-  .nav__menu-bar{
+/* @media screen and (max-width: 768px) {
+  .navbar{
     display: none;
   }
+} */
   .nav__menu-list{
     position: unset;
     flex-direction: row;
@@ -675,4 +718,3 @@
   .nav__link:hover:before{
    width: 100%;
   }
-}

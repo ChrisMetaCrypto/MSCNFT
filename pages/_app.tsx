@@ -7,6 +7,7 @@ import ThirdwebGuideFooter from "../components/ThirdwebGuideFooter";
 import Header from "../components/Header";
 import WalletBalance from "../components/WalletBalance";
 import Footer from "../components/Footer";
+import  Navbar  from "../components/navbar";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.AvalancheFujiTestnet;

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800");
 
+@taiwlind base;
+@taiwlind components;
+@tailwind utilities;
+
+
 /* Box sizing rules */
 *,
 *::before,
@@ -51,4 +56,36 @@ h2 {
   font-size: 2rem;
 }
 
+.active {
+  transform : rotate(-180deg);
+}
 
+
+.dark-blue {
+
+  color : hsl(238, 29%, 16%);
+
+}
+
+.light-red:hover {
+
+  color : hsl(14, 88%, 65%);
+}
+
+.dark-gray {
+
+  color : hsl(240, 6%, 50%);
+
+}
+
+.dark-purple {
+
+  color : hsl(300, 67%, 30%);
+
+}
+
+.white {
+
+  color : hsl(0, 0%, 100%);
+
+}

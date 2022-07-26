@@ -167,7 +167,8 @@ import {
             <hr className={`${styles.divider} ${styles.spacerTop}`} />
   
             <h2>Unstaked NFTs</h2>
-  
+            <div className={styles.nftBox}>
+            <div className={styles.nftBoxContainer}>
             <div className={styles.nftBoxGrid}>
               {ownedNfts?.map((nft) => (
                 <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -184,6 +185,8 @@ import {
                   </button>
                 </div>
               ))}
+            </div>
+            </div>
             </div>
           </>
         )}

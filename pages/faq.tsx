@@ -12,6 +12,8 @@ import {
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import Accordion from "../components/accordion";
+import AccordionTile from "../components/AccordionTitle";
+import FAQ2 from "../components/Data"
 
 const FAQ: NextPage = () => {
   const router = useRouter();
@@ -31,24 +33,29 @@ const FAQ: NextPage = () => {
   return (
     <>
       {/* Content */}
-      <div className={styles.container}>
+      <div className={styles.container2}>
         {/* Top Section */}
-        <h1 className={styles.h1}> FAQs</h1>
-        <p className={styles.explain}>
-        </p>
-        <hr className={styles.divider} />
-        <div>
-        <Accordion title="Why are the differnet types of NFTs?" content="There are 3 different types of NFTs Standard, Silver & Gold. There are diffent catergories of NFTs to ensure the longevity of the game"/>
-        <Accordion title="How much do the NFTs Cost?" content="Standard Costs 3 Avax, Silver costs 1,500 Fuel & Gold costs 25,000 Fuel" />
-        <Accordion title="What can you earn?" content="Standard NFTs earn 100 Fuel per day, Silver NFTs earn 500 Fuel per day & Gold NFTs earn 10 Nitro per day" />
-        <Accordion title="Why can I not see my NFT in my wallet?" content="When your NFT is being staked to earn Fuel or Nitro it is being held inside the NFT Staking contract. You must unstake the NFT if you want to see it in your wallet or to resell on it on a marketplace " />
-        <Accordion title="Can you resell your NFTs?" content="Yes you are able to list and resell your NFTs on Avalance marketplaces such as NFT Trade" />
+      
+        <div className="max-w-screen min-h-screen flex justify-center items-center">
+      <div className="relative  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center
+       py-10 px-10 lg:px-16 rounded-2xl bg-purple-700	shadow-2xl modal">
+        <main className='w-full lg:w flex flex-col '>
+          <h1 className='white text-center lg:text-left'>FAQs</h1>
 
-        </div>
-        
-        <hr className={styles.divider} />
-        
-        </div>
+          {FAQ2.map((item, index )=> {
+
+              return(
+                <AccordionTile key={index} question={item.question} answer={item.answer}/>
+              )
+
+          })}
+      
+        </main>
+
+
+      </div>
+    </div>
+  </div>
        
     </>
   );

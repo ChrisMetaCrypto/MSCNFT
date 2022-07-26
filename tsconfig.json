@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/navitem.jsx", "components/navbar.tjsx", "components/stakingstandard.tsx", "components/Footer.js", "pages/whitepaper.js", "components/accordion.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/navitem.jsx", "components/navbar.tjsx", "components/stakingstandard.tsx", "components/Footer.js", "pages/whitepaper.js", "components/accordion.js", "components/AccordionTitle.js"],
   "exclude": ["node_modules"]
 }
