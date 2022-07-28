@@ -6,7 +6,6 @@ import Head from "next/head";
 import ThirdwebGuideFooter from "../components/ThirdwebGuideFooter";
 import Header from "../components/Header";
 import WalletBalance from "../components/WalletBalance";
-import Footer from "../components/Footer";
 import HeaderMobile from "../components/Headermobile";
 
 // This is the chainId your dApp will work on.

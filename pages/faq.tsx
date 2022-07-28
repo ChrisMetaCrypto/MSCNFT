@@ -2,9 +2,6 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import {
-  MediaRenderer,
-  useActiveListings,
-  useMarketplace,
   useAddress,
   useToken,
   useTokenBalance,
