@@ -23,7 +23,7 @@ export default function StakingSilver() {
   const fueltokenContract = useToken(fueltokenContractAddress);
   const nitrotokenContract = useToken(nitrotokenContractAddress);
   const stakingContractAddress = "0xca1E3E1Af2e464F4018559266D9eF1DA27cFF9b9";
-  const stakingContractAddressSilver = "0x56081bEAb7Ea0DC7A60107971A96bF9e3C38B36C";
+  const stakingContractAddressSilver = "0x7135FDe9344062EcD0C1B6a06E7Ea5C84cdc972d";
   const stakingContractAddressGold = "0xCCCf9Ff1ef61b62015cCE69F4a999B474333461B";
 
 

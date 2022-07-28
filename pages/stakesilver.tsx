@@ -17,9 +17,9 @@ import {
   import { useEffect, useState } from "react";
   import styles from "../styles/Home.module.css";
   
-  const nftDropContractAddress = "0x8672d236A1cF7A9cc963bc28Ab4A80973791d7b4";
+  const nftDropContractAddress = "0x2404B34463164A96528624104ddD2811a363AbDE";
   const tokenContractAddress = "0xefb1cd2B89aA2cd3cAaBbd16f6F457CFA798E8Ed";
-  const stakingContractAddress = "0x56081bEAb7Ea0DC7A60107971A96bF9e3C38B36C";
+  const stakingContractAddress = "0x7135FDe9344062EcD0C1B6a06E7Ea5C84cdc972d";
   
   const StakeSilver: NextPage = () => {
     // Wallet Connection Hooks

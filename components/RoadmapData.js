@@ -25,7 +25,7 @@ const RoadmapData = [
     },
 
     {
-        question : "Quality Assurnace",
+        question : "Quality Assurance",
         answer : "Thorough testing of the appliation to try and ensure no major issues.",
 
     },

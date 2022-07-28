@@ -25,7 +25,7 @@ export default function StakingNFTGold() {
   const nitrotokenContractAddress = "0xEE8522942A73b260129a4799045622345335D08c";
   const fueltokenContract = useToken(fueltokenContractAddress);
   const nitrotokenContract = useToken(nitrotokenContractAddress);
-  const stakingContractAddress = "0xC3fE4B9591ca0924edf4f8E16b73864BF23A1e12";
+  const stakingContractAddress = "0xf4A0980a1dc78181957F090017E27229478984Fc";
   const stakingContractAddressSilver = "0x56081bEAb7Ea0DC7A60107971A96bF9e3C38B36C";
   const stakingContractAddressGold = "0xCCCf9Ff1ef61b62015cCE69F4a999B474333461B";
 
@@ -71,7 +71,7 @@ export default function StakingNFTGold() {
                     {!claimableRewards
                       ? "Loading..."
                       : ethers.utils.formatUnits(claimableRewards, 0)}
-                  </b> : NFT/s Owned not staked
+                  </b> : NFT/s Owned but currently not staked
           </div>
     </>
   );

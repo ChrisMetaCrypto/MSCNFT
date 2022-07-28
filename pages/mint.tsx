@@ -20,9 +20,9 @@ import {
   import { useRouter } from "next/router";
   
   // Put Your NFT Drop Contract address from the dashboard here
-  const myNftDropContractAddress = '0x34733099B14d0863ADcd5d7A3072C2088571dfcA';  
-  const myNftDropContractAddress2 = '0x8672d236A1cF7A9cc963bc28Ab4A80973791d7b4';
-  const myNftDropContractAddress3 = '0xC3fE4B9591ca0924edf4f8E16b73864BF23A1e12';
+  const myNftDropContractAddress = '0xbA0b0bDA0D2c950944Cec94dd224FD033636C309';  
+  const myNftDropContractAddress2 = '0x2404B34463164A96528624104ddD2811a363AbDE';
+  const myNftDropContractAddress3 = '0xf4A0980a1dc78181957F090017E27229478984Fc';
 
   
   const Mint: NextPage = () => {

@@ -22,7 +22,7 @@ export default function StakingStandard() {
   const nitrotokenContractAddress = "0xEE8522942A73b260129a4799045622345335D08c";
   const fueltokenContract = useToken(fueltokenContractAddress);
   const nitrotokenContract = useToken(nitrotokenContractAddress);
-  const stakingContractAddress = "0xca1E3E1Af2e464F4018559266D9eF1DA27cFF9b9";
+  const stakingContractAddress = "0xC0a3Cf5A1d79Cf439D3532a6eB113c699071ac58";
   const stakingContractAddressSilver = "0x56081bEAb7Ea0DC7A60107971A96bF9e3C38B36C";
   const stakingContractAddressGold = "0xCCCf9Ff1ef61b62015cCE69F4a999B474333461B";
 
