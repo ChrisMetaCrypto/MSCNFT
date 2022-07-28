@@ -16,6 +16,7 @@ import {
   import type { NextPage } from 'next';
   import { useState } from 'react';
   import styles from '../styles/Theme.module.css';
+  import styles2 from "../styles/Home.module.css";
   import { useRouter } from "next/router";
   
   // Put Your NFT Drop Contract address from the dashboard here
@@ -61,12 +62,17 @@ import {
     // Check if there's any NFTs left
     const isSoldOut = unclaimedSupply?.toNumber() === 0;
   
+ 
     // Check price
     const price = parseUnits(
       activeClaimCondition?.currencyMetadata.displayValue || '0',
       activeClaimCondition?.currencyMetadata.decimals,
     );
 
+    const switchtoAva = async () => {
+      switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
+      return;
+    }
      
     // Load contract metadata
     const { data: contractMetadataGold } = useContractMetadata(
@@ -82,11 +88,11 @@ import {
   
     // Check if there's NFTs left on the active claim phase
     const isNotReadyGold =
-      activeClaimCondition &&
-      parseInt(activeClaimCondition?.availableSupply) === 0;
+      activeClaimConditionGold &&
+      parseInt(activeClaimConditionGold?.availableSupply) === 0;
   
     // Check if there's any NFTs left
-    const isSoldOutGold = unclaimedSupply?.toNumber() === 0;
+    const isSoldOutGold = unclaimedSupplyGold?.toNumber() === 0;
   
     // Check price
     const priceGold = parseUnits(
@@ -108,11 +114,11 @@ import {
   
     // Check if there's NFTs left on the active claim phase
     const isNotReadySilver =
-      activeClaimCondition &&
-      parseInt(activeClaimCondition?.availableSupply) === 0;
+      activeClaimConditionSilver &&
+      parseInt(activeClaimConditionSilver?.availableSupply) === 0;
   
     // Check if there's any NFTs left
-    const isSoldOutSilver = unclaimedSupply?.toNumber() === 0;
+    const isSoldOutSilver = unclaimedSupplySilver?.toNumber() === 0;
   
     // Check price
     const priceSilver = parseUnits(
@@ -176,6 +182,7 @@ import {
 
       const mintgold = async () => {
         if (isOnWrongNetwork) {
+          alert("Please switch to Avavlance Chain")
           switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
           return;
         }
@@ -245,7 +252,11 @@ import {
                 <div>
                   <h2>Not ready to be minted yet</h2>
                 </div>
-              ) : (
+              ) :networkMismatch ? (
+                <button className={styles2.unStakeButton} onClick={switchtoAva}>Switch Network</button>
+                
+              ): (
+                
                 <>
                    <h3>Quantity</h3>
                   <div className={styles.quantityContainer}>
@@ -348,15 +359,18 @@ import {
             {/* Show claim button or connect wallet button */}
             {address ? (
               // Sold out or show the claim button
-              isSoldOut ? (
+              isSoldOutSilver ? (
                 <div>
                   <h2>Sold Out</h2>
                 </div>
-              ) : isNotReady ? (
+              ) : isNotReadySilver ? (
                 <div>
                   <h2>Not ready to be minted yet</h2>
                 </div>
-              ) : (
+               ) :networkMismatch ? (
+                <button className={styles2.unStakeButton} onClick={switchtoAva}>Switch Network</button>
+                
+              ): (
                 <>
                  <h3>Quantity</h3>
                   <div className={styles.quantityContainer}>
@@ -457,15 +471,18 @@ import {
             {/* Show claim button or connect wallet button */}
             {address ? (
               // Sold out or show the claim button
-              isSoldOut ? (
+              isSoldOutGold ? (
                 <div>
                   <h2>Sold Out</h2>
                 </div>
-              ) : isNotReady ? (
+              ) : isNotReadyGold ? (
                 <div>
                   <h2>Not ready to be minted yet</h2>
                 </div>
-              ) : (
+                ) :networkMismatch ? (
+                  <button className={styles2.unStakeButton} onClick={switchtoAva}>Switch Network</button>
+                  
+                ): (
                 <>
                   <h3>Quantity</h3>
                   <div className={styles.quantityContainer}>

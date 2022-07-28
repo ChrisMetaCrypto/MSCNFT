@@ -13,6 +13,8 @@ import { useRouter } from "next/router";
 import AccordionTile from "../components/AccordionTitle";
 import RoadmapData from "../components/RoadmapData"
 
+
+
 const Home: NextPage = () => {
   const router = useRouter();
   const fueltokenContractAddress = "0xefb1cd2B89aA2cd3cAaBbd16f6F457CFA798E8Ed";
@@ -41,6 +43,7 @@ const Home: NextPage = () => {
           Stake your MSC Car NFTs to earn $Fuel & $Nitro
         </p>
         <hr className={styles.divider} />
+      
         <h1 className={styles.h2}>Roadmap</h1>
         <div className=" flex justify-center items-center">
       <div className="relative  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center

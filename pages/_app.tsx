@@ -7,6 +7,7 @@ import ThirdwebGuideFooter from "../components/ThirdwebGuideFooter";
 import Header from "../components/Header";
 import WalletBalance from "../components/WalletBalance";
 import Footer from "../components/Footer";
+import HeaderMobile from "../components/Headermobile";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.AvalancheFujiTestnet;
@@ -27,7 +28,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="NFT, Staking, DeFi"
         />
       </Head>
-      <Header />
+      <Header/>
+      <HeaderMobile/>
       <Component {...pageProps} />
       <ThirdwebGuideFooter />
     </ThirdwebProvider>

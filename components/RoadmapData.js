@@ -45,6 +45,11 @@ const RoadmapData = [
         answer : "Minting and Game is released to public",
 
     },
+    {
+        question : "Air Drops",
+        answer : "We are going to be giving away $Fuel, $Nitro and other Special NFTs to our holders",
+
+    },
   
 
 ]

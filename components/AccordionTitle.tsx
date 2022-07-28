@@ -41,7 +41,7 @@ const AccordionTile : React.FC<Data> = (props) => {
                 
                 style={{maxHeight : `${height}`}}
                 className={"border-bottom overflow-hidden transform transition-max-height duration-500 ease-in-out" }>
-                    <p className="mt-0 text-[14px] mr-6 white">
+                    <p className="mt-0 sm:text-[14px] mr-6 white text-left">
                         {answer}
                     </p>
                 </div>

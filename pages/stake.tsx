@@ -1,5 +1,6 @@
 import {
     ThirdwebNftMedia,
+    ChainId,
     useAddress,
     useMetamask,
     useNFTDrop,
@@ -7,6 +8,8 @@ import {
     useTokenBalance,
     useOwnedNFTs,
     useContract,
+    useNetworkMismatch,
+    useNetwork
   } from "@thirdweb-dev/react";
   import { BigNumber, ethers } from "ethers";
   import type { NextPage } from "next";
@@ -16,16 +19,16 @@ import {
   const nftDropContractAddress = "0x34733099B14d0863ADcd5d7A3072C2088571dfcA";
   const tokenContractAddress = "0xefb1cd2B89aA2cd3cAaBbd16f6F457CFA798E8Ed";
   const stakingContractAddress = "0xca1E3E1Af2e464F4018559266D9eF1DA27cFF9b9";
-  
+ 
   const Stake: NextPage = () => {
     // Wallet Connection Hooks
     const address = useAddress();
     const connectWithMetamask = useMetamask();
-  
+    const [, switchNetwork] = useNetwork();
     // Contract Hooks
     const nftDropContract = useNFTDrop(nftDropContractAddress);
     const tokenContract = useToken(tokenContractAddress);
-  
+    const networkMismatch = useNetworkMismatch();
     const { contract, isLoading } = useContract(stakingContractAddress);
   
     // Load Unstaked NFTs
@@ -97,6 +100,11 @@ import {
     async function withdraw(id: BigNumber) {
       const withdraw = await contract?.call("withdraw", id);
     }
+
+    const switchtoAva = async () => {
+        switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
+        return;
+      }
   
     async function claimRewards() {
       const claim = await contract?.call("claimRewards");
@@ -116,7 +124,15 @@ import {
           <button className={styles.mainButton} onClick={connectWithMetamask}>
             Connect Wallet
           </button>
-        ) : (
+        ) :networkMismatch ? (
+            <div>
+              <h3>Please switch to Avalanche Chain</h3>
+              <img src="avax.png" alt="Avax" width="300" height="300"/>
+              <br></br>
+              
+              <button className={styles.unStakeButton} onClick={switchtoAva}>Switch</button>
+            </div>
+          ): (
           <>
             <p>Stake your standard NFTs here to earn Fuel</p>
             <p>Each NFT can earn 100 Fuel per day</p>

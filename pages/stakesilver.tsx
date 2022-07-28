@@ -1,5 +1,6 @@
 import {
     ThirdwebNftMedia,
+    useChainId,
     useAddress,
     useMetamask,
     useNFTDrop,
@@ -7,6 +8,9 @@ import {
     useTokenBalance,
     useOwnedNFTs,
     useContract,
+    useNetwork, 
+    useNetworkMismatch,
+    ChainId
   } from "@thirdweb-dev/react";
   import { BigNumber, ethers } from "ethers";
   import type { NextPage } from "next";
@@ -21,7 +25,9 @@ import {
     // Wallet Connection Hooks
     const address = useAddress();
     const connectWithMetamask = useMetamask();
-  
+    const networkMismatch = useNetworkMismatch();
+    const [, switchNetwork] = useNetwork();
+
     // Contract Hooks
     const nftDropContract = useNFTDrop(nftDropContractAddress);
     const tokenContract = useToken(tokenContractAddress);
@@ -98,6 +104,11 @@ import {
       const withdraw = await contract?.call("withdraw", id);
     }
   
+    const switchtoAva = async () => {
+      switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
+      return;
+    }
+
     async function claimRewards() {
       const claim = await contract?.call("claimRewards");
     }
@@ -116,7 +127,14 @@ import {
           <button className={styles.mainButton} onClick={connectWithMetamask}>
             Connect Wallet
           </button>
-        ) : (
+         ) :networkMismatch ? (
+          <div>
+            <h3>Please switch to Avalanche Chain</h3>
+            <img src="avax.png" alt="Avax" width="300" height="300"/>
+            <br></br>
+            <button className={styles.unStakeButton} onClick={switchtoAva}>Switch</button>
+          </div>
+        ): (
           <>
             <p>Stake your Silver NFTs here to earn fuel</p>
             <p>Each NFT can earn 500 Fuel per day</p>

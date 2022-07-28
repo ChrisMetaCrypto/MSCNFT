@@ -11,7 +11,6 @@ import {
 } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import Accordion from "../components/accordion";
 import AccordionTile from "../components/AccordionTitle";
 import FAQ2 from "../components/Data"
 

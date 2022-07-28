@@ -113,6 +113,19 @@
 }
 }
 
+.navBar {
+  background-color: #6b617a;
+  color: #f1f1f1;
+
+
+}
+
+@media (min-width:768px) {
+  .navBar{
+    display: none;
+}
+}
+
 
 .headerbelow {
   background-color: #262936;
@@ -629,8 +642,9 @@
 .nftBoxGrid
 {
  
-  display: flex;
-  flex-direction: row;
+  display: inline-grid;
+  grid-template-columns: repeat(5, 5fr);
+  row-gap: 5px;
 }
 
 
@@ -718,3 +732,5 @@
   .nav__link:hover:before{
    width: 100%;
   }
+
+  

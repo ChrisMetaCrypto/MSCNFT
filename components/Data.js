@@ -2,19 +2,19 @@ const FAQ2 = [
 
     {
         question : "Why are there different types of NFTs?",
-        answer : "There are 3 different types of NFTs Standard, Silver & Gold. There are different catergories of NFTs to ensure the longevity of the game.",
+        answer : "There are 3 different types of NFTs - Standard, Silver & Gold. There are different catergories of NFTs to ensure the longevity of the game.",
 
     },
 
     {
         question : "How much do the NFTs Cost?",
-        answer : "Standard Costs 3 Avax, Silver costs 1,500 Fuel & Gold costs 25,000 Fuel.",
+        answer : "A Standard NFT costs 3 AVAX tokens, Silver costs 1,500 FUEL & Gold costs 25,000 FUEL.",
 
     },
 
     {
         question : "What can you earn?",
-        answer : "Standard NFTs earn 100 Fuel per day, Silver NFTs earn 500 Fuel per day & Gold NFTs earn 10 Nitro per day.",
+        answer : "Standard NFTs earn 100 FUEL per day, Silver NFTs earn 500 FUEL per day & Gold NFTs earn 10 NITRO per day.",
 
     },
 

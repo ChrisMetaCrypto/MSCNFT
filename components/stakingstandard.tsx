@@ -9,6 +9,7 @@ import {
   useToken,
   useTokenBalance,
   useContract,
+  useNetworkMismatch
 } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { BigNumber, ethers } from "ethers";
