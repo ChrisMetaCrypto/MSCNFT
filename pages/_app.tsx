@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta
           name="keywords"
-          content="NFT, Staking, DeFi"
+          content="NFT, Staking, DeFi, Avalanche"
         />
       </Head>
       <Header/>
