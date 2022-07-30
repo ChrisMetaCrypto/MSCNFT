@@ -18,6 +18,31 @@ import {
   import styles from '../styles/Theme.module.css';
   import styles2 from "../styles/Home.module.css";
   import { useRouter } from "next/router";
+import styled from 'styled-components';
+
+  const StyledRightArrowButton = styled.div`
+  color: white;
+  width: 0px;
+  height: 0px;
+  border: 30px solid black;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: white;
+  cursor:pointer;
+`
+
+const StyledLeftArrowButton = styled.div`
+  color: white;
+  width: 0px;
+  height: 0px;
+  border: 30px solid black;
+  border-top-color: transparent;
+  border-right-color: white;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  cursor: pointer;
+`
   
   // Put Your NFT Drop Contract address from the dashboard here
   const myNftDropContractAddress = '0xbA0b0bDA0D2c950944Cec94dd224FD033636C309';  
@@ -41,7 +66,8 @@ import {
   
     // The amount the user claims
     const [quantity, setQuantity] = useState(1); // default to 1
-  
+    const [quantitySilver, setQuantitySilver] = useState(1); // default to 1
+    const [quantityGold, setQuantityGold] = useState(1); // default to 1
     // Load contract metadata
     const { data: contractMetadata } = useContractMetadata(
       myNftDropContractAddress,
@@ -263,7 +289,7 @@ import {
                     <button
                       className={`${styles.quantityControlButton}`}
                       onClick={() => setQuantity(quantity - 1)}
-                      disabled={quantity <= 1}
+                      disabled={quantity <= 1 }
                     >
                       -
                     </button>
@@ -274,11 +300,11 @@ import {
                       className={`${styles.quantityControlButton}`}
                       onClick={() => setQuantity(quantity + 1)}
                       disabled={
-                        quantity >=
-                        parseInt(
-                          activeClaimCondition?.quantityLimitPerTransaction ||
-                            '0',
-                        )
+                        quantity >=5
+                        // parseInt(
+                        //   activeClaimCondition?.quantityLimitPerTransaction ||
+                        //     '0',
+                        // )
                       }
                     >
                       +
@@ -376,23 +402,23 @@ import {
                   <div className={styles.quantityContainer}>
                     <button
                       className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantity(quantity - 1)}
-                      disabled={quantity <= 1}
+                      onClick={() => setQuantitySilver(quantitySilver - 1)}
+                      disabled={quantitySilver <= 1}
                     >
                       -
                     </button>
   
-                    <h2>{quantity}</h2>
+                    <h2>{quantitySilver}</h2>
   
                     <button
                       className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantity(quantity + 1)}
+                      onClick={() => setQuantitySilver(quantitySilver + 1)}
                       disabled={
-                        quantity >=
-                        parseInt(
-                          activeClaimConditionSilver?.quantityLimitPerTransaction ||
-                            '0',
-                        )
+                        quantitySilver >=5
+                        // parseInt(
+                        //   activeClaimCondition?.quantityLimitPerTransaction ||
+                        //     '0',
+                        // )
                       }
                     >
                       +
@@ -406,7 +432,7 @@ import {
                   >
                     {claimNFTSilver.isLoading
                       ? 'Minting...'
-                      : `Mint${quantity > 1 ? ` ${quantity}` : ''}${
+                      : `Mint${quantitySilver > 1 ? ` ${quantitySilver}` : ''}${
                           activeClaimConditionSilver?.price.eq(0)
                             ? ' (Free)'
                             : activeClaimConditionSilver?.currencyMetadata.displayValue
@@ -486,25 +512,25 @@ import {
                 <>
                   <h3>Quantity</h3>
                   <div className={styles.quantityContainer}>
-                    <button
+                    <button 
                       className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantity(quantity - 1)}
-                      disabled={quantity <= 1}
+                      onClick={() => setQuantityGold(quantityGold - 1)}
+                      disabled={quantityGold <= 1}
                     >
                       -
                     </button>
   
-                    <h2>{quantity}</h2>
+                    <h2>{quantityGold}</h2>
   
                     <button
                       className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantity(quantity + 1)}
+                      onClick={() => setQuantityGold(quantityGold + 1)}
                       disabled={
-                        quantity >=
-                        parseInt(
-                          activeClaimConditionGold?.quantityLimitPerTransaction ||
-                            '0',
-                        )
+                        quantityGold >=5
+                        // parseInt(
+                        //   activeClaimCondition?.quantityLimitPerTransaction ||
+                        //     '0',
+                        // )
                       }
                     >
                       +
@@ -518,7 +544,7 @@ import {
                   >
                     {claimNFTGold.isLoading
                       ? 'Minting...'
-                      : `Mint${quantity > 1 ? ` ${quantity}` : ''}${
+                      : `Mint${quantityGold > 1 ? ` ${quantityGold}` : ''}${
                           activeClaimConditionGold?.price.eq(0)
                             ? ' (Free)'
                             : activeClaimConditionGold?.currencyMetadata.displayValue
