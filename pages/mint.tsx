@@ -173,7 +173,7 @@ const StyledLeftArrowButton = styled.div`
       }
   
       claimNFT.mutate(
-        { to: address as string, quantity },
+        { to: address as string, quantity : quantity},
         {
           onSuccess: () => {
             alert(`Successfully minted NFT${quantity > 1 ? 's' : ''}!`);
@@ -193,7 +193,7 @@ const StyledLeftArrowButton = styled.div`
         }
     
         claimNFTSilver.mutate(
-          { to: address as string, quantity },
+          { to: address as string, quantity : quantitySilver},
           {
             onSuccess: () => {
               alert(`Successfully minted NFT${quantitySilver > 1 ? 's' : ''}!`);
@@ -214,10 +214,10 @@ const StyledLeftArrowButton = styled.div`
         }
     
         claimNFTGold.mutate(
-          { to: address as string, quantity },
+          { to: address as string, quantity: quantityGold},
           {
             onSuccess: () => {
-              alert(`Successfully minted NFT${quantityGold > 1 ? 's' : ''}!`);
+              alert(`Successfully minted NFT${quantityGold> 1 ? 's' : ''}!`);
             },
             onError: (err: any) => {
               console.error(err);
@@ -245,11 +245,11 @@ const StyledLeftArrowButton = styled.div`
   
             {/* Amount claimed so far */}
             <div className={styles.mintCompletionArea}>
-              <div className={styles.mintAreaLeft}>
+              <div>
                
                 <h3>Total Minted</h3>
               </div>
-              <div className={styles.mintAreaRight}>
+              <div>
                 {claimedSupply && unclaimedSupply ? (
                   <p>
                     {/* Claimed supply so far */}
@@ -360,11 +360,10 @@ const StyledLeftArrowButton = styled.div`
   
             {/* Amount claimed so far */}
             <div className={styles.mintCompletionArea}>
-              <div className={styles.mintAreaLeft}>
-               
+              <div>
                 <h3>Total Minted</h3>
               </div>
-              <div className={styles.mintAreaRight}>
+              <div>
                 {claimedSupplySilver && unclaimedSupplySilver ? (
                   <p>
                     {/* Claimed supply so far */}
@@ -402,7 +401,7 @@ const StyledLeftArrowButton = styled.div`
                   <div className={styles.quantityContainer}>
                     <button
                       className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantitySilver(quantitySilver - 1)}
+                      onClick={() => setQuantitySilver(quantitySilver- 1)}
                       disabled={quantitySilver <= 1}
                     >
                       -

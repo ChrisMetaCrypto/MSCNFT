@@ -154,7 +154,7 @@ import {
               </div>
             </div>
             <button
-              className={`${styles.mainButton} ${styles.spacerTop}`}
+              className={`${styles.mainButton}`}
               onClick={() => claimRewards()}
             >
               Claim Rewards

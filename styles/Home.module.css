@@ -100,7 +100,6 @@
   left: 0;
   width: 100vw;
   height: 96px;
-  margin-bottom: 96px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -162,10 +161,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin-right: 2%;
-  margin-left: 3%;
+  flex-direction: row;
+  padding:  7px;
 }
+
+.left:hover {
+  text-decoration: underline;
+}
+
 
 .center {
   height: 100%;
