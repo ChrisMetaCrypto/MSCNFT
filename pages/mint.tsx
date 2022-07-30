@@ -196,7 +196,7 @@ const StyledLeftArrowButton = styled.div`
           { to: address as string, quantity },
           {
             onSuccess: () => {
-              alert(`Successfully minted NFT${quantity > 1 ? 's' : ''}!`);
+              alert(`Successfully minted NFT${quantitySilver > 1 ? 's' : ''}!`);
             },
             onError: (err: any) => {
               console.error(err);
@@ -217,7 +217,7 @@ const StyledLeftArrowButton = styled.div`
           { to: address as string, quantity },
           {
             onSuccess: () => {
-              alert(`Successfully minted NFT${quantity > 1 ? 's' : ''}!`);
+              alert(`Successfully minted NFT${quantityGold > 1 ? 's' : ''}!`);
             },
             onError: (err: any) => {
               console.error(err);
