@@ -156,9 +156,9 @@ const StyledLeftArrowButton = styled.div`
     // Multiply depending on quantity
     const priceToMint = price.mul(quantity);
       // Multiply depending on quantity
-      const priceToMintSilver = priceSilver.mul(quantity);
+      const priceToMintSilver = priceSilver.mul(quantitySilver);
         // Multiply depending on quantity
-    const priceToMintGold = priceGold.mul(quantity);
+    const priceToMintGold = priceGold.mul(quantityGold);
   
     // Loading state while we fetch the metadata
     if (!nftDrop || !contractMetadata) {
