@@ -2,7 +2,7 @@ const RoadmapData = [
 
     {
         question : "Industry Research",
-        answer : "We have choose Avalanche Chain for the NFT app.",
+        answer : "We have choosen Avalanche Chain for the NFT app.",
 
     },
 
@@ -14,19 +14,19 @@ const RoadmapData = [
 
     {
         question : "Whitepaper",
-        answer : "Detailed whitepaper to the exlpain the tokenomics and aim of the game.",
+        answer : "Detailed whitepaper to the explain the tokenomics and the aim of the game.",
 
     },
 
     {
         question : "Development",
-        answer : "Developent of the the Smart contracts and web app.",
+        answer : "Development of the the Smart contracts and web app.",
 
     },
 
     {
         question : "Quality Assurance",
-        answer : "Thorough testing of the appliation to try and ensure no major issues.",
+        answer : "Thorough testing of the application to try and ensure no major issues.",
 
     },
 
@@ -37,12 +37,12 @@ const RoadmapData = [
     },
     {
         question : "Whitelist",
-        answer : "Early access tpo minting for users that are on the whitelist.",
+        answer : "Early access to minting for users that are on the whitelist.",
 
     },
     {
         question : "Launch",
-        answer : "Minting and Game is released to public",
+        answer : "Minting and the Game is released to public",
 
     },
     {

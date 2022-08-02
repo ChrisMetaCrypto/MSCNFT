@@ -95,7 +95,7 @@
 
 .header {
   background-color: #262936;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -154,6 +154,37 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.smallcontainerwallet{
+  background-color: #6b617a;
+  opacity: 80%;
+  width: 50%;
+  border-radius: 10px;
+  position: sticky;
+}
+
+.smallcontainerdashboard{
+  background-color: #6D28D9;
+  opacity: 80%;
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.smallcontainergolddash{
+  background-color: #cdd82b;
+  opacity: 80%;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.smallcontainersilverdash{
+  background-color: #6b626c;
+  opacity: 80%;
+  width: 50%;
+  border-radius: 10px;
 }
 
 .left {
@@ -648,6 +679,11 @@
   display: inline-grid;
   grid-template-columns: repeat(5, 5fr);
   row-gap: 5px;
+  background-color: #6D28D9;
+  opacity: 85%;
+  width: 95%;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 

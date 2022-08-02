@@ -37,7 +37,7 @@ const Dashboard: NextPage = () => {
   const networkMismatch = useNetworkMismatch();
 
 
-
+  const SHORT_CRYPTO_CURRENCY_DECIMALS = 4;
   const address = useAddress();
 
   const { data: tokenBalancefuel } = useTokenBalance(fueltokenContract, address);
@@ -68,6 +68,7 @@ const Dashboard: NextPage = () => {
     switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
     return;
   }
+  const formattedbalance = tokenBalancefuel?.displayValue
   const nitrobalance =  tokenBalancenitro
   return (
   
@@ -83,7 +84,7 @@ const Dashboard: NextPage = () => {
         ) :networkMismatch ? (
             <div>
               <h3>Please switch to Avalanche Chain</h3>
-              <img src="avax.png" alt="Avax" width="300" height="300"/>
+              <img src="avax.png" alt="Avax" width="150" height="150"/>
               <br></br>
               
               <button className={styles.unStakeButton} onClick={switchtoAva}>Switch</button>
@@ -91,6 +92,7 @@ const Dashboard: NextPage = () => {
           ): (
               <>
         <hr className={styles.divider} />
+        <div className={styles.smallcontainerwallet}>
         <p className={styles.explain}>
           Wallet Balance
         </p>
@@ -104,14 +106,20 @@ const Dashboard: NextPage = () => {
             Nitro : {tokenBalancenitro?.displayValue}
           </h3>
           </div>
-          <hr className={styles.divider} />
+          </div>
+          <div className={styles.divider} />
+          <div className={styles.smallcontainerdashboard}>
           <StakingNFTStandard/> 
           <StakingStandard/>
+          </div>
+          <div className={styles.smallcontainerdashboard}>
           <StakingNFTSilver/> 
           <StakingSilver/>
+          </div>
+          <div className={styles.smallcontainerdashboard}>
           <StakingNFTGold/>
           <StakingGold/>
-
+          </div>
           </>
           )};
       </div>

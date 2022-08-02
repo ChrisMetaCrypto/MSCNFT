@@ -20,7 +20,6 @@ body {
   --hello: -100%;
   padding-bottom: 250px;
    background-image: url("/background.jpg"); 
- 
 }
 
 /* Inherit fonts for inputs and buttons */

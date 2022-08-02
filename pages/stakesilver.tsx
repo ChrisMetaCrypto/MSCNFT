@@ -130,7 +130,7 @@ import {
          ) :networkMismatch ? (
           <div>
             <h3>Please switch to Avalanche Chain</h3>
-            <img src="avax.png" alt="Avax" width="300" height="300"/>
+            <img src="avax.png" alt="Avax" width="150" height="150"/>
             <br></br>
             <button className={styles.unStakeButton} onClick={switchtoAva}>Switch</button>
           </div>

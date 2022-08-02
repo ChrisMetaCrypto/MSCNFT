@@ -127,7 +127,7 @@ import {
         ) :networkMismatch ? (
             <div>
               <h3>Please switch to Avalanche Chain</h3>
-              <img src="avax.png" alt="Avax" width="300" height="300"/>
+              <img src="avax.png" alt="Avax" width="150" height="150"/>
               <br></br>
               
               <button className={styles.unStakeButton} onClick={switchtoAva}>Switch</button>
@@ -187,6 +187,7 @@ import {
             <div className={styles.nftBoxContainer}>
             <div className={styles.nftBoxGrid}>
               {ownedNfts?.map((nft) => (
+
                 <div className={styles.nftBox} key={nft.metadata.id.toString()}>
                   <ThirdwebNftMedia
                     metadata={nft.metadata}

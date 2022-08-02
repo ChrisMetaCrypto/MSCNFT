@@ -20,13 +20,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 0 24px;
-    min-height: 720px;
+    width: 60%;
+    padding: 0 50px;
+    min-height: 200px;
     max-width: 95vw;
-    gap: 2%;
+    gap: 0.5%;
     border: px solid var(--border-color);
     border-radius: 16px;
+    background-color: #6D28D9;
+    opacity: 90%;
+    margin: 30px;
+
   }
   
   .infoSide {

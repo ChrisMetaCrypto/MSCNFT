@@ -33,7 +33,7 @@ const FAQ: NextPage = () => {
         {/* Top Section */}
       
         <div className="max-w-screen min-h-screen flex justify-center items-center">
-      <div className="relative  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center
+      <div className="static  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center
        py-10 px-10 lg:px-16 rounded-2xl bg-purple-700	shadow-2xl modal">
         <main className='w-full lg:w flex flex-col '>
           <h1 className='white text-center lg:text-left'>FAQs</h1>

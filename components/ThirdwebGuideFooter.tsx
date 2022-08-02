@@ -20,7 +20,7 @@ export default function ThirdwebGuideFooter() {
           
         }}
       >
-       <a href="https://www.instagram.com/metaspeedcarclub/">
+       <a href="https://www.instagram.com/metaspeedcarclub/" target="_blank" rel="noreferrer">
        <img
          
          src={`/instagramnew.png`}
@@ -34,7 +34,7 @@ export default function ThirdwebGuideFooter() {
        />
        </a>
 
-       <a href="https://discord.com/invite/PPC7XvV6vm">
+       <a href="https://discord.com/invite/PPC7XvV6vm"  target="_blank" rel="noreferrer">
           <img
          
          src={`/discordnew.png`}
@@ -47,7 +47,7 @@ export default function ThirdwebGuideFooter() {
        />
        </a>
 
-        <a href="https://twitter.com/Metaspeedclubs">
+        <a href="https://twitter.com/Metaspeedclubs"  target="_blank" rel="noreferrer">
          <img
          
               src={`/twitternew.png`}

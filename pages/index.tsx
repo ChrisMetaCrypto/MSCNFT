@@ -44,9 +44,9 @@ const Home: NextPage = () => {
         </p>
         <hr className={styles.divider} />
       
-        <h1 className={styles.h2}>Roadmap</h1>
+        <h1 className={styles.h2}>Development Roadmap</h1>
         <div className=" flex justify-center items-center">
-      <div className="relative  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center
+      <div className="static  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center
        py-10 px-10 lg:px-16 rounded-2xl bg-violet-700	shadow-2xl modal">
         <main className='w-full lg:w flex flex-col '>
           {RoadmapData.map((item, index )=> {
