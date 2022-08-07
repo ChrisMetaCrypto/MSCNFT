@@ -299,7 +299,7 @@ const StyledLeftArrowButton = styled.div`
                       className={`${styles.quantityControlButton}`}
                       onClick={() => setQuantity(quantity + 1)}
                       disabled={
-                        quantity >=1
+                        quantity >=100
                         // parseInt(
                         //   activeClaimCondition?.quantityLimitPerTransaction ||
                         //     '0',
