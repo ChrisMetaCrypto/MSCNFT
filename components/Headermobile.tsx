@@ -14,11 +14,7 @@ export default function HeaderMobile() {
 
     
     <nav className={styles.navBar}> 
-    <ul ><a color="#0000" href={"/dashboard"} >Dashboard</a></ul>
     <ul><Link href={"/mint"} >Mint</Link></ul>
-    <ul><Link href={"/stake"} >Standard Staking</Link></ul>
-    <ul><Link href={"/stakesilver"} >Silver Staking</Link></ul>
-    <ul><Link href={"/stakegold"} >Gold Staking</Link></ul>
     <ul><Link href={"/whitepaper"} >Whitepaper</Link></ul>
     <ul><Link href={"/faq"} >FAQ</Link></ul>
  

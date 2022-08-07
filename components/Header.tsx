@@ -25,17 +25,17 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div className={styles.left}> 
+      {/* <div className={styles.left}> 
         <Link href="/dashboard" >
         <h3  style={{ cursor: "pointer", color: "#CA2ADE" }}>Dashboard</h3>
         </Link>
-      </div>
+      </div> */}
       <div className={styles.left}> 
         <Link href="/mint" >
         <h3  style={{ cursor: "pointer" , color: "#CA2ADE"}}>Mint</h3>
         </Link>
       </div>
-      <div className={styles.left}> 
+      {/* <div className={styles.left}> 
         <Link href="/stake" >
         <h3  style={{ cursor: "pointer", color:"#CD7F32" }}> Standard Staking</h3>
         </Link>
@@ -49,7 +49,7 @@ export default function Header() {
         <Link href="/stakegold" >
         <h3  style={{ cursor: "pointer", color:"#CFB53B" }}>Gold Staking</h3>
         </Link>
-      </div>
+      </div> */}
       <div className={styles.left}> 
         <Link href="/whitepaper" >
         <h3  style={{ cursor: "pointer", color: "#CA2ADE" }}>WhitePaper</h3>

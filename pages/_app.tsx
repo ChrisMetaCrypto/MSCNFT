@@ -9,11 +9,13 @@ import WalletBalance from "../components/WalletBalance";
 import HeaderMobile from "../components/Headermobile";
 
 // This is the chainId your dApp will work on.
-const activeChainId = ChainId.AvalancheFujiTestnet;
+const activeChainId = ChainId.Avalanche;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider desiredChainId={activeChainId}>
+    <ThirdwebProvider 
+
+    desiredChainId={activeChainId}>
 
       <Head>
         <title>MetaSpeedClub</title>

@@ -45,23 +45,23 @@ const StyledLeftArrowButton = styled.div`
 `
   
   // Put Your NFT Drop Contract address from the dashboard here
-  const myNftDropContractAddress = '0xbA0b0bDA0D2c950944Cec94dd224FD033636C309';  
+  const myNftDropContractAddress = '0xAE4d2CB220AAaE62FC464255a5B466f5c2826CBD';  
   const myNftDropContractAddress2 = '0x2404B34463164A96528624104ddD2811a363AbDE';
-  const myNftDropContractAddress3 = '0xf4A0980a1dc78181957F090017E27229478984Fc';
+ // const myNftDropContractAddress3 = '0xf4A0980a1dc78181957F090017E27229478984Fc';
 
   
   const Mint: NextPage = () => {
     const router = useRouter();
     const networkMismatch = useNetworkMismatch();
     const nftDrop = useNFTDrop(myNftDropContractAddress);
-    const nftDropSilver = useNFTDrop(myNftDropContractAddress2);
-    const nftDropGold = useNFTDrop(myNftDropContractAddress3);
+    // const nftDropSilver = useNFTDrop(myNftDropContractAddress2);
+    // const nftDropGold = useNFTDrop(myNftDropContractAddress3);
     const address = useAddress();
     const connectWithMetamask = useMetamask();
     const isOnWrongNetwork = useNetworkMismatch();
     const claimNFT = useClaimNFT(nftDrop);
-    const claimNFTSilver = useClaimNFT(nftDropSilver);
-    const claimNFTGold = useClaimNFT(nftDropGold);
+    // const claimNFTSilver = useClaimNFT(nftDropSilver);
+    // const claimNFTGold = useClaimNFT(nftDropGold);
     const [, switchNetwork] = useNetwork();
   
     // The amount the user claims
@@ -96,69 +96,68 @@ const StyledLeftArrowButton = styled.div`
     );
 
     const switchtoAva = async () => {
-      switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
+      switchNetwork && switchNetwork(ChainId.Avalanche);
       return;
     }
      
     // Load contract metadata
-    const { data: contractMetadataGold } = useContractMetadata(
-        myNftDropContractAddress3,
-      );
+    // const { data: contractMetadataGold } = useContractMetadata(
+    //     myNftDropContractAddress3,
+    //   );
 
     // Load claimed supply and unclaimed supply
-    const { data: unclaimedSupplyGold } = useUnclaimedNFTSupply(nftDropGold);
-    const { data: claimedSupplyGold } = useClaimedNFTSupply(nftDropGold);
+    // const { data: unclaimedSupplyGold } = useUnclaimedNFTSupply(nftDropGold);
+    // const { data: claimedSupplyGold } = useClaimedNFTSupply(nftDropGold);
   
-    // Load the active claim condition
-    const { data: activeClaimConditionGold } = useActiveClaimCondition(nftDropGold);
+    // // Load the active claim condition
+    // const { data: activeClaimConditionGold } = useActiveClaimCondition(nftDropGold);
   
     // Check if there's NFTs left on the active claim phase
-    const isNotReadyGold =
-      activeClaimConditionGold &&
-      parseInt(activeClaimConditionGold?.availableSupply) === 0;
+    // const isNotReadyGold =
+    //   activeClaimConditionGold &&
+    //   parseInt(activeClaimConditionGold?.availableSupply) === 0;
   
-    // Check if there's any NFTs left
-    const isSoldOutGold = unclaimedSupplyGold?.toNumber() === 0;
+    // // Check if there's any NFTs left
+    // const isSoldOutGold = unclaimedSupplyGold?.toNumber() === 0;
   
-    // Check price
-    const priceGold = parseUnits(
-      activeClaimConditionGold?.currencyMetadata.displayValue || '0',
-      activeClaimConditionGold?.currencyMetadata.decimals,
-    );
+    // // Check price
+    // const priceGold = parseUnits(
+    //   activeClaimConditionGold?.currencyMetadata.displayValue || '0',
+    //   activeClaimConditionGold?.currencyMetadata.decimals,
+    // );
   
-      // Load contract metadata
-      const { data: contractMetadataSilver } = useContractMetadata(
-        myNftDropContractAddress2,
-      );
+    //   // Load contract metadata
+    //   const { data: contractMetadataSilver } = useContractMetadata(
+    //     myNftDropContractAddress2,
+    //   );
 
-    // Load claimed supply and unclaimed supply
-    const { data: unclaimedSupplySilver } = useUnclaimedNFTSupply(nftDropSilver);
-    const { data: claimedSupplySilver } = useClaimedNFTSupply(nftDropSilver);
+    // // Load claimed supply and unclaimed supply
+    // const { data: unclaimedSupplySilver } = useUnclaimedNFTSupply(nftDropSilver);
+    // const { data: claimedSupplySilver } = useClaimedNFTSupply(nftDropSilver);
   
-    // Load the active claim condition
-    const { data: activeClaimConditionSilver } = useActiveClaimCondition(nftDropSilver);
+    // // Load the active claim condition
+    // const { data: activeClaimConditionSilver } = useActiveClaimCondition(nftDropSilver);
   
-    // Check if there's NFTs left on the active claim phase
-    const isNotReadySilver =
-      activeClaimConditionSilver &&
-      parseInt(activeClaimConditionSilver?.availableSupply) === 0;
+    // // Check if there's NFTs left on the active claim phase
+    // const isNotReadySilver =
+    //   activeClaimConditionSilver &&
+    //   parseInt(activeClaimConditionSilver?.availableSupply) === 0;
   
-    // Check if there's any NFTs left
-    const isSoldOutSilver = unclaimedSupplySilver?.toNumber() === 0;
+    // // Check if there's any NFTs left
+    // const isSoldOutSilver = unclaimedSupplySilver?.toNumber() === 0;
   
-    // Check price
-    const priceSilver = parseUnits(
-      activeClaimConditionSilver?.currencyMetadata.displayValue || '0',
-      activeClaimConditionSilver?.currencyMetadata.decimals,
-    );
-  
+    // // Check price
+    // const priceSilver = parseUnits(
+    //   activeClaimConditionSilver?.currencyMetadata.displayValue || '0',
+    //   activeClaimConditionSilver?.currencyMetadata.decimals,
+    // );
   
     // Multiply depending on quantity
     const priceToMint = price.mul(quantity);
       // Multiply depending on quantity
-      const priceToMintSilver = priceSilver.mul(quantitySilver);
+     // const priceToMintSilver = priceSilver.mul(quantitySilver);
         // Multiply depending on quantity
-    const priceToMintGold = priceGold.mul(quantityGold);
+   // const priceToMintGold = priceGold.mul(quantityGold);
   
     // Loading state while we fetch the metadata
     if (!nftDrop || !contractMetadata) {
@@ -168,7 +167,7 @@ const StyledLeftArrowButton = styled.div`
     // Function to mint/claim an NFT
     const mint = async () => {
       if (isOnWrongNetwork) {
-        switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
+        switchNetwork && switchNetwork(ChainId.Avalanche);
         return;
       }
   
@@ -186,46 +185,46 @@ const StyledLeftArrowButton = styled.div`
       );
     };
 
-    const mintsilver = async () => {
-        if (isOnWrongNetwork) {
-          switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
-          return;
-        }
+    // const mintsilver = async () => {
+    //     if (isOnWrongNetwork) {
+    //       switchNetwork && switchNetwork(ChainId.Avalanche);
+    //       return;
+    //     }
     
-        claimNFTSilver.mutate(
-          { to: address as string, quantity : quantitySilver},
-          {
-            onSuccess: () => {
-              alert(`Successfully minted NFT${quantitySilver > 1 ? 's' : ''}!`);
-            },
-            onError: (err: any) => {
-              console.error(err);
-              alert(err?.message || 'Something went wrong');
-            },
-          },
-        );
-      };
+    //     claimNFTSilver.mutate(
+    //       { to: address as string, quantity : quantitySilver},
+    //       {
+    //         onSuccess: () => {
+    //           alert(`Successfully minted NFT${quantitySilver > 1 ? 's' : ''}!`);
+    //         },
+    //         onError: (err: any) => {
+    //           console.error(err);
+    //           alert(err?.message || 'Something went wrong');
+    //         },
+    //       },
+    //     );
+    //   };
 
-      const mintgold = async () => {
-        if (isOnWrongNetwork) {
-          alert("Please switch to Avavlance Chain")
-          switchNetwork && switchNetwork(ChainId.AvalancheFujiTestnet);
-          return;
-        }
+    //   const mintgold = async () => {
+    //     if (isOnWrongNetwork) {
+    //       alert("Please switch to Avavlance Chain")
+    //       switchNetwork && switchNetwork(ChainId.Avalanche);
+    //       return;
+    //     }
     
-        claimNFTGold.mutate(
-          { to: address as string, quantity: quantityGold},
-          {
-            onSuccess: () => {
-              alert(`Successfully minted NFT${quantityGold> 1 ? 's' : ''}!`);
-            },
-            onError: (err: any) => {
-              console.error(err);
-              alert(err?.message || 'Something went wrong');
-            },
-          },
-        );
-      };
+    //     claimNFTGold.mutate(
+    //       { to: address as string, quantity: quantityGold},
+    //       {
+    //         onSuccess: () => {
+    //           alert(`Successfully minted NFT${quantityGold> 1 ? 's' : ''}!`);
+    //         },
+    //         onError: (err: any) => {
+    //           console.error(err);
+    //           alert(err?.message || 'Something went wrong');
+    //         },
+    //       },
+    //     );
+    //   };
   
     return (
       <div className={styles.container}>
@@ -300,7 +299,7 @@ const StyledLeftArrowButton = styled.div`
                       className={`${styles.quantityControlButton}`}
                       onClick={() => setQuantity(quantity + 1)}
                       disabled={
-                        quantity >=5
+                        quantity >=1
                         // parseInt(
                         //   activeClaimCondition?.quantityLimitPerTransaction ||
                         //     '0',
@@ -344,232 +343,6 @@ const StyledLeftArrowButton = styled.div`
               </div>
             )}
           </div>
-        </div>
-        <div className={styles.container}>
-        <div className={styles.mintInfoContainer}>
-          <div className={styles.imageSide}>
-          <h2>Silver NFTs</h2>
-          <h3>Earns 500 $Fuel per day</h3>
-
-            {/* Image Preview of NFTs */}
-            <img
-              className={styles.image}
-              src={contractMetadataSilver?.image}
-              alt={`${contractMetadataSilver?.name} preview image`}
-            />
-  
-            {/* Amount claimed so far */}
-            <div className={styles.mintCompletionArea}>
-              <div>
-                <h3>Total Minted</h3>
-              </div>
-              <div>
-                {claimedSupplySilver && unclaimedSupplySilver ? (
-                  <p>
-                    {/* Claimed supply so far */}
-                    <b>{claimedSupplySilver?.toNumber()}</b>
-                    {' / '}
-                    {
-                      // Add unclaimed and claimed supply to get the total supply
-                      claimedSupplySilver?.toNumber() + unclaimedSupplySilver?.toNumber()
-                    }
-                  </p>
-                ) : (
-                  // Show loading state if we're still loading the supply
-                  <p>Loading...</p>
-                )}
-              </div>
-            </div>
-  
-            {/* Show claim button or connect wallet button */}
-            {address ? (
-              // Sold out or show the claim button
-              isSoldOutSilver ? (
-                <div>
-                  <h2>Sold Out</h2>
-                </div>
-              ) : isNotReadySilver ? (
-                <div>
-                  <h2>Not ready to be minted yet</h2>
-                </div>
-               ) :networkMismatch ? (
-                <button className={styles2.unStakeButton} onClick={switchtoAva}>Switch Network</button>
-                
-              ): (
-                <>
-                 <h3>Quantity</h3>
-                  <div className={styles.quantityContainer}>
-                    <button
-                      className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantitySilver(quantitySilver- 1)}
-                      disabled={quantitySilver <= 1}
-                    >
-                      -
-                    </button>
-  
-                    <h2>{quantitySilver}</h2>
-  
-                    <button
-                      className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantitySilver(quantitySilver + 1)}
-                      disabled={
-                        quantitySilver >=5
-                        // parseInt(
-                        //   activeClaimCondition?.quantityLimitPerTransaction ||
-                        //     '0',
-                        // )
-                      }
-                    >
-                      +
-                    </button>
-                  </div>
-  
-                  <button
-                    className={`${styles.mintButton} ${styles.spacerTop} ${styles.spacerBottom}`}
-                    onClick={mintsilver}
-                    disabled={claimNFTSilver.isLoading}
-                  >
-                    {claimNFTSilver.isLoading
-                      ? 'Minting...'
-                      : `Mint${quantitySilver > 1 ? ` ${quantitySilver}` : ''}${
-                          activeClaimConditionSilver?.price.eq(0)
-                            ? ' (Free)'
-                            : activeClaimConditionSilver?.currencyMetadata.displayValue
-                            ? ` (${formatUnits(
-                                priceToMintSilver,
-                                activeClaimConditionSilver.currencyMetadata.decimals,
-                              )} FUEL)`
-                            : ''
-                        }`}
-                  </button>
-                </>
-              )
-            ) : (
-              <div className={styles.buttons}>
-                <button
-                  className={styles.mainButton}
-                  onClick={connectWithMetamask}
-                >
-                  Connect Wallet
-                </button>
-                
-              </div>
-            )}
-          </div>
-        </div>
-        <div className={styles.container}>
-        <div className={styles.mintInfoContainer}>
-          <div className={styles.imageSide}>
-          <h2>Gold NFTs</h2>
-          <h3>Earns 10 $Nitro per day</h3>
-            {/* Image Preview of NFTs */}
-            <img
-              className={styles.image}
-              src={contractMetadataGold?.image}
-              alt={`${contractMetadataGold?.name} preview image`}
-            />
-  
-            {/* Amount claimed so far */}
-            <div className={styles.mintCompletionArea}>
-              <div className={styles.mintAreaLeft}>
-                
-                <h3>Total Minted</h3>
-              </div>
-              <div className={styles.mintAreaRight}>
-                {claimedSupplyGold && unclaimedSupplyGold ? (
-                  <p>
-                    {/* Claimed supply so far */}
-                    <b>{claimedSupplyGold?.toNumber()}</b>
-                    {' / '}
-                    {
-                      // Add unclaimed and claimed supply to get the total supply
-                      claimedSupplyGold?.toNumber() + unclaimedSupplyGold?.toNumber()
-                    }
-                  </p>
-                ) : (
-                  // Show loading state if we're still loading the supply
-                  <p>Loading...</p>
-                )}
-              </div>
-            </div>
-  
-            {/* Show claim button or connect wallet button */}
-            {address ? (
-              // Sold out or show the claim button
-              isSoldOutGold ? (
-                <div>
-                  <h2>Sold Out</h2>
-                </div>
-              ) : isNotReadyGold ? (
-                <div>
-                  <h2>Not ready to be minted yet</h2>
-                </div>
-                ) :networkMismatch ? (
-                  <button className={styles2.unStakeButton} onClick={switchtoAva}>Switch Network</button>
-                  
-                ): (
-                <>
-                  <h3>Quantity</h3>
-                  <div className={styles.quantityContainer}>
-                    <button 
-                      className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantityGold(quantityGold - 1)}
-                      disabled={quantityGold <= 1}
-                    >
-                      -
-                    </button>
-  
-                    <h2>{quantityGold}</h2>
-  
-                    <button
-                      className={`${styles.quantityControlButton}`}
-                      onClick={() => setQuantityGold(quantityGold + 1)}
-                      disabled={
-                        quantityGold >=5
-                        // parseInt(
-                        //   activeClaimCondition?.quantityLimitPerTransaction ||
-                        //     '0',
-                        // )
-                      }
-                    >
-                      +
-                    </button>
-                  </div>
-  
-                  <button
-                    className={`${styles.mintButton} ${styles.spacerTop} ${styles.spacerBottom}`}
-                    onClick={mintgold}
-                    disabled={claimNFTGold.isLoading}
-                  >
-                    {claimNFTGold.isLoading
-                      ? 'Minting...'
-                      : `Mint${quantityGold > 1 ? ` ${quantityGold}` : ''}${
-                          activeClaimConditionGold?.price.eq(0)
-                            ? ' (Free)'
-                            : activeClaimConditionGold?.currencyMetadata.displayValue
-                            ? ` (${formatUnits(
-                                priceToMintGold,
-                                activeClaimConditionGold.currencyMetadata.decimals,
-                              )} FUEL)`
-                            : ''
-                        }`}
-                  </button>
-                </>
-              )
-            ) : (
-              <div className={styles.buttons}>
-                <button
-                  className={styles.mainButton}
-                  onClick={connectWithMetamask}
-                >
-                  Connect Wallet
-                </button>
-               
-              </div>
-            )}
-          </div>
-        </div>
-        </div>
         </div>
       </div>
     );
