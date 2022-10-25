@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <div className={styles.header}>
-      <div className={styles.left}>
+      <div className={styles.center}>
         <div>
           <Link href="/" passHref role="button">
             <img
@@ -30,11 +30,11 @@ export default function Header() {
         <h3  style={{ cursor: "pointer", color: "#CA2ADE" }}>Dashboard</h3>
         </Link>
       </div> */}
-      <div className={styles.left}> 
+      {/* <div className={styles.left}> 
         <Link href="/mint" >
         <h3  style={{ cursor: "pointer" , color: "#CA2ADE"}}>Mint</h3>
         </Link>
-      </div>
+      </div> */}
       {/* <div className={styles.left}> 
         <Link href="/stake" >
         <h3  style={{ cursor: "pointer", color:"#CD7F32" }}> Standard Staking</h3>
@@ -50,7 +50,7 @@ export default function Header() {
         <h3  style={{ cursor: "pointer", color:"#CFB53B" }}>Gold Staking</h3>
         </Link>
       </div> */}
-      <div className={styles.left}> 
+      {/* <div className={styles.left}> 
         <Link href="/whitepaper" >
         <h3  style={{ cursor: "pointer", color: "#CA2ADE" }}>WhitePaper</h3>
         </Link>
@@ -60,27 +60,8 @@ export default function Header() {
         <h3  style={{ cursor: "pointer", color: "#CA2ADE" }}>FAQ</h3>
         </Link>
       </div>
-      <div className={styles.right}>
-        {address ? (
-          <>
-            <a
-              className={styles.secondaryButton}
-              onClick={() => disconnectWallet()}
-            >
-              Disconnect Wallet
-            </a>
-            <p style={{ marginLeft: 8, marginRight: 8, color: "grey" }}>|</p>
-            <p>{address.slice(0, 6).concat("...").concat(address.slice(-4))}</p>
-          </>
-        ) : (
-          <a
-            className={styles.mainButton}
-            onClick={() => connectWithMetamask()}
-          >
-            Connect Wallet
-          </a>
-        )}
-      </div>
+     */}
+      
       </div>
     
   );

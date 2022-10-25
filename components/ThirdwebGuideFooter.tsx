@@ -20,7 +20,7 @@ export default function ThirdwebGuideFooter() {
           
         }}
       >
-       <a href="https://www.instagram.com/metaspeedcarclub/" target="_blank" rel="noreferrer">
+       {/* <a href="https://www.instagram.com/metaspeedcarclub/" target="_blank" rel="noreferrer">
        <img
          
          src={`/instagramnew.png`}
@@ -45,7 +45,7 @@ export default function ThirdwebGuideFooter() {
            margin: "15px"
          }}
        />
-       </a>
+       </a> */}
 
         <a href="https://twitter.com/Metaspeedclubs"  target="_blank" rel="noreferrer">
          <img

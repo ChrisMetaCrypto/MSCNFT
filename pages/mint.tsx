@@ -17,8 +17,9 @@ import {
   import { useState } from 'react';
   import styles from '../styles/Theme.module.css';
   import styles2 from "../styles/Home.module.css";
-  import { useRouter } from "next/router";
+  //import { useRouter } from "next/router";
 import styled from 'styled-components';
+import { MintRequest721 } from '@thirdweb-dev/sdk';
 
   const StyledRightArrowButton = styled.div`
   color: white;
@@ -51,7 +52,7 @@ const StyledLeftArrowButton = styled.div`
 
   
   const Mint: NextPage = () => {
-    const router = useRouter();
+   // const router = useRouter();
     const networkMismatch = useNetworkMismatch();
     const nftDrop = useNFTDrop(myNftDropContractAddress);
     // const nftDropSilver = useNFTDrop(myNftDropContractAddress2);

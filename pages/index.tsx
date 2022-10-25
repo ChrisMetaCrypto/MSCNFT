@@ -16,7 +16,7 @@ import RoadmapData from "../components/RoadmapData"
 
 
 const Home: NextPage = () => {
-  const router = useRouter();
+ // const router = useRouter();
   const fueltokenContractAddress = "0xefb1cd2B89aA2cd3cAaBbd16f6F457CFA798E8Ed";
   const nitrotokenContractAddress = "0xEE8522942A73b260129a4799045622345335D08c";
   const fueltokenContract = useToken(fueltokenContractAddress);
@@ -40,11 +40,11 @@ const Home: NextPage = () => {
        <source src="/introvid.mp4" type="video/mp4"/>
        </video>
         <p className={styles.explain}>
-          Stake your MSC Car NFTs to earn $Fuel & $Nitro
+          Coming soon....
         </p>
         <hr className={styles.divider} />
       
-        <h1 className={styles.h2}>Development Roadmap</h1>
+        {/* <h1 className={styles.h2}>Development Roadmap</h1>
         <div className=" flex justify-center items-center">
       <div className="static  max-w-sm lg:max-w-3xl min-h-[350px] flex flex-col lg:flex-row justify-end items-center
        py-10 px-10 lg:px-16 rounded-2xl bg-violet-700	shadow-2xl modal">
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
 
 
       </div>
-    </div>
+    </div> */}
         </div>
     </>
   );
